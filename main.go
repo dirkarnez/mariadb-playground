@@ -24,11 +24,15 @@ func main() {
 
 	app := iris.New()
 	app.Get("/status", func(ctx iris.Context) {
+		// ctx.JSON(iris.Map{
+		// 	"code": http.StatusOK,
+		// 	"data": iris.Map{
+		// 		"RowsAffected": dbInstance.RowsAffected,
+		// 	},
+		// })
 		ctx.JSON(iris.Map{
-			"code": http.StatusOK,
-			"data": iris.Map{
-				"RowsAffected": dbInstance.RowsAffected,
-			},
+			"code":  http.StatusOK,
+			"data": "hello world!",
 		})
 	})
 
