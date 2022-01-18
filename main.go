@@ -36,11 +36,13 @@ func main() {
 		query := ctx.Params().GetString("query")
 		
 		var result [][]string
-		rows, err := dbInstance.Raw(query).Rows()
+		rows, _ := dbInstance.Raw(query).Rows()
 		defer rows.Close()
-		cols, err := rows.Columns()
+		
+		cols, _ := rows.Columns()
 		pointers := make([]interface{}, len(cols))
 		container := make([]string, len(cols))
+		
 		for i, _ := range pointers {
 			pointers[i] = &container[i]
 		}
