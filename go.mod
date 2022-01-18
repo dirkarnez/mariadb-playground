@@ -30,12 +30,17 @@ require (
 	golang.org/x/sys v0.0.0-20191025090151-53bf42e6b339
 	golang.org/x/text v0.3.2
 	gopkg.in/yaml.v2 v2.2.4
+	gorm.io/driver/mysql v1.2.3
+	gorm.io/gorm v1.22.5
 )
 
 require (
 	github.com/CloudyKit/jet/v3 v3.0.0 // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/iris-contrib/jade v1.1.3 // indirect
 	github.com/iris-contrib/pongo2 v0.0.1 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.4 // indirect
 	github.com/kataras/sitemap v0.0.5 // indirect
 	github.com/schollz/closestmatch v2.1.0+incompatible // indirect
 	gopkg.in/ini.v1 v1.51.1 // indirect
