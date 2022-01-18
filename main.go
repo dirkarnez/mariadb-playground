@@ -10,8 +10,7 @@ import (
 )
 
 func main() {
-	//dbInstance
-	_, dbInstanceErr := gorm.Open(mysql.New(mysql.Config{
+	dbInstance, dbInstanceErr := gorm.Open(mysql.New(mysql.Config{
 		DSN:                       "root:123456@tcp(mariadb:3306)/default?charset=utf8&parseTime=True", // data source name, refer https://github.com/go-sql-driver/mysql#dsn-data-source-name
 		DefaultStringSize:         256,                                                                 // add default size for string fields, by default, will use db type `longtext` for fields without size, not a primary key, no index defined and don't have default values
 		DisableDatetimePrecision:  true,                                                                // disable datetime precision support, which not supported before MySQL 5.6
@@ -25,15 +24,11 @@ func main() {
 
 	app := iris.New()
 	app.Get("/status", func(ctx iris.Context) {
-		// ctx.JSON(iris.Map{
-		// 	"code": http.StatusOK,
-		// 	"data": iris.Map{
-		// 		"RowsAffected": dbInstance.RowsAffected,
-		// 	},
-		// })
 		ctx.JSON(iris.Map{
-			"code":  http.StatusOK,
-			"data": "hello world!",
+			"code": http.StatusOK,
+		 	"data": iris.Map{
+		 		"RowsAffected": dbInstance.RowsAffected,
+		 	},
 		})
 	})
 
