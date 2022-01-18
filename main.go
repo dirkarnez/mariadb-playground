@@ -32,8 +32,8 @@ func main() {
 		})
 	})
 
-	app.Get("/query/{query:string}", func(ctx iris.Context) {
-		query := ctx.Params().GetString("query")
+	app.Get("/query", func(ctx iris.Context) {
+		query := "INSERT INTO 'lab1_schema1'.'Employee' ('EmpNo', 'FirstName', 'LastName', 'PhoneNo', 'Email') VALUES ('1', 'Tom', 'Chan', '23456789', 'tomchan@gmail.com')"//ctx.Params().GetString("query")
 		
 		var result [][]string
 		rows, _ := dbInstance.Raw(query).Rows()
