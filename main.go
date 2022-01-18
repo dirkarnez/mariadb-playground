@@ -38,7 +38,7 @@ func main() {
 		var result [][]string
 		rows, err := dbInstance.Raw(query).Rows()
 		defer rows.Close()
-		cols := rows.Columns()
+		cols, err := rows.Columns()
 		pointers := make([]interface{}, len(cols))
 		container := make([]string, len(cols))
 		for i, _ := range pointers {
