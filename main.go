@@ -34,20 +34,24 @@ func main() {
 
 	app.Get("/query/{query:string}", func(ctx iris.Context) {
 		query := ctx.Params().GetString("query")
-		// dbInstance.db.Raw("select name, age, email from users where name = ?", "jinzhu").Rows()
-
-		// // Raw SQL
-		// rows, err := db.Raw("select name, age, email from users where name = ?", "jinzhu").Rows()
-		// defer rows.Close()
-		// for rows.Next() {
-		// 	rows.Scan(&name, &age, &email)
-
-		// 	// do something
-		// }
+		
+		var result [][]string
+		rows, err := dbInstance.Raw(query).Rows()
+		defer rows.Close()
+		cols := rows.Columns()
+		pointers := make([]interface{}, len(cols))
+		container := make([]string, len(cols))
+		for i, _ := range pointers {
+			pointers[i] = &container[i]
+		}
+		for rows.Next() {
+			rows.Scan(pointers...)
+			result = append(result, container)
+		}
 
 		ctx.JSON(iris.Map{
 			"code": http.StatusOK,
-			"data": query,
+			"data": result,
 		})
 	})
 
