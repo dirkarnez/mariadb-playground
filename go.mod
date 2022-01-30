@@ -1,4 +1,4 @@
-module github.com/dirkarnez/golang-hello-world
+module github.com/dirkarnez/mariadb-playground
 
 require (
 	github.com/BurntSushi/toml v0.3.1
