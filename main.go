@@ -60,6 +60,9 @@ func main() {
 		log.Fatal(dbInstanceErr.Error())
 	}
 
+	if dbInstance != nil {
+		fmt.Println("Connected!")
+	}
 	// app := iris.New()
 	// app.Get("/status", func(ctx iris.Context) {
 	// 	ctx.JSON(iris.Map{

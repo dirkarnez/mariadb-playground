@@ -1,1 +1,9 @@
 mariadb-10.6.5-winx64
+*.exe
+
+
+# Ignore all
+*.exe
+
+# Unignore all with extensions
+!mariadb-playground.exe
