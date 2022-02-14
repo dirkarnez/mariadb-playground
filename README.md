@@ -12,3 +12,5 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
 - Performance tuning (Query explain)
   - [MySQL :: MySQL Workbench Manual :: 7.1 Performance Dashboard](https://dev.mysql.com/doc/workbench/en/wb-performance-dashboard.html)
 - Indexing
+- Faking
+  - [pioz/faker: Random fake data and struct generator for Go.](https://github.com/pioz/faker)
