@@ -7,7 +7,7 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
 ### Prerequisites
 - Unzip tool
 - MariaDB client
-   - [DBeaver](https://dbeaver.com/files/dbeaver-le-latest-win32.win32.x86_64.zip), or
+   - [DBeaver](https://dbeaver.io/files/dbeaver-ce-latest-win32.win32.x86_64.zip), or
    - [HeidiSQL x64 Portable](https://www.heidisql.com/download.php?download=portable-64), or
 - [Download MariaDB Server - MariaDB.org](https://mariadb.org/download/?t=mariadb&p=mariadb&r=10.6.5&os=windows&cpu=x86_64&pkg=zip&m=xtom_hk)
 
@@ -22,6 +22,8 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
 - database name as [`mariadb-playground.exe`](mariadb-playground.exe)'s argument
 - Performance tuning (Query explain)
   - [MySQL :: MySQL Workbench Manual :: 7.1 Performance Dashboard](https://dev.mysql.com/doc/workbench/en/wb-performance-dashboard.html)
+  - [DBeaver Documentation](https://dbeaver.com/docs/wiki/Query-Execution-Plan/)
+   - <kbd>Ctrl<kbd> + <kbd>Shift<kbd> + <kbd>E<kbd> to explain current query
 - Indexing
 - Faking
   - [pioz/faker: Random fake data and struct generator for Go.](https://github.com/pioz/faker)
