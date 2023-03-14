@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"flag"
 	"fmt"
 	"log"
 
@@ -9,29 +10,46 @@ import (
 	"gorm.io/gorm"
 )
 
-const (
-	DSN          = "root:@tcp(localhost:3306)/?charset=utf8&parseTime=True"
-	DatabaseName = "EIE3112"
+var (
+	isRunInDocker bool = false
+	databaseName string
 )
 
 func main() {
+	flag.BoolVar(&isRunInDocker, "docker", false, "Is run in docker")
+	flag.StringVar(&databaseName, "database", "", "Database Name")
+	flag.Parse()
+
+	
+
+	if len(databaseName) < 1 {
+		log.Fatal("Database name should be specified")
+	}
+
+	var DSN string
+	if isRunInDocker {
+		DSN = "root:@tcp(mariadb:3306)/?charset=utf8&parseTime=True"
+	} else {
+		DSN = "root:@tcp(localhost:3306)/?charset=utf8&parseTime=True"
+	}
+
 	db, err := sql.Open("mysql", DSN)
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
-	_, err = db.Exec(fmt.Sprintf("DROP DATABASE IF EXISTS %s", DatabaseName))
+	_, err = db.Exec(fmt.Sprintf("DROP DATABASE IF EXISTS %s", databaseName))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	_, err = db.Exec(fmt.Sprintf("CREATE DATABASE %s", DatabaseName))
+	_, err = db.Exec(fmt.Sprintf("CREATE DATABASE %s", databaseName))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	_, err = db.Exec(fmt.Sprintf("USE %s", DatabaseName))
+	_, err = db.Exec(fmt.Sprintf("USE %s", databaseName))
 	if err != nil {
 		log.Fatal(err)
 	}
