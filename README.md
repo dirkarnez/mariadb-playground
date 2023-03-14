@@ -23,7 +23,7 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
 - Performance tuning (Query explain)
   - [MySQL :: MySQL Workbench Manual :: 7.1 Performance Dashboard](https://dev.mysql.com/doc/workbench/en/wb-performance-dashboard.html)
   - [DBeaver Documentation](https://dbeaver.com/docs/wiki/Query-Execution-Plan/)
-   - <kbd>Ctrl<kbd> + <kbd>Shift<kbd> + <kbd>E<kbd> to explain current query
+   - <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> to explain current query
 - Indexing
 - Faking
   - [pioz/faker: Random fake data and struct generator for Go.](https://github.com/pioz/faker)
