@@ -1,14 +1,24 @@
-FROM golang:alpine
+FROM golang:buster
 
-RUN apk update && apk add bash
+# RUN adduser --disabled-password --gecos '' docker
+# RUN adduser docker sudo
+# RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-COPY . /go/src/github.com/dirkarnez/golang-hello-world/
-WORKDIR /go/src/github.com/dirkarnez/golang-hello-world/
+# USER docker
 
-RUN chmod +x ./wait-for-it.sh
+COPY . /go/src/github.com/dirkarnez/mariadb-playground/
+WORKDIR /go/src/github.com/dirkarnez/mariadb-playground/
 
-RUN go build -o app
+RUN apt-get update; \
+	apt-get install -y --no-install-recommends \
+		bash \
+		sudo \
+	&& \
+	rm -rf /var/lib/apt/lists/* && \
+	go build -o mariadb-playground
+
+ENTRYPOINT ["/bin/bash"]
+
+# CMD ./mariadb-playground --database=default --docker=true	
 
 EXPOSE 5000
-
-ENTRYPOINT ["./wait-for-it.sh","mariadb:3306","--","./app", "--database", "default", "--docker", "true"]

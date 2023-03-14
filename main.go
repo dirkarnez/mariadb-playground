@@ -20,17 +20,15 @@ func main() {
 	flag.StringVar(&databaseName, "database", "", "Database Name")
 	flag.Parse()
 
-	
-
 	if len(databaseName) < 1 {
 		log.Fatal("Database name should be specified")
 	}
 
 	var DSN string
 	if isRunInDocker {
-		DSN = "root:@tcp(mariadb:3306)/?charset=utf8&parseTime=True"
+		DSN = "root:123456@tcp(mariadb:3306)/?charset=utf8&parseTime=True"
 	} else {
-		DSN = "root:@tcp(localhost:3306)/?charset=utf8&parseTime=True"
+		DSN = "root:123456@tcp(localhost:3306)/?charset=utf8&parseTime=True"
 	}
 
 	db, err := sql.Open("mysql", DSN)
@@ -39,17 +37,18 @@ func main() {
 	}
 	defer db.Close()
 
-	_, err = db.Exec(fmt.Sprintf("DROP DATABASE IF EXISTS %s", databaseName))
+	_, err = db.Exec(fmt.Sprintf("DROP DATABASE IF EXISTS `%s`", databaseName))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	_, err = db.Exec(fmt.Sprintf("CREATE DATABASE %s", databaseName))
+	_, err = db.Exec(fmt.Sprintf("CREATE DATABASE `%s`;", databaseName))
 	if err != nil {
+		fmt.Println("!!!!!!B")
 		log.Fatal(err)
 	}
 
-	_, err = db.Exec(fmt.Sprintf("USE %s", databaseName))
+	_, err = db.Exec(fmt.Sprintf("USE `%s`;", databaseName))
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -1,10 +1,12 @@
 version: '3'
 services:
   web:
-    container_name: webapp-frontend
     build: .
+    user: root
     ports:
       - "5000:5000"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     depends_on:
       - mariadb
   mariadb:
