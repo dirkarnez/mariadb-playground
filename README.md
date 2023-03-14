@@ -14,8 +14,8 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
 ### How to use
 1. Download / `git clone` this repo
 2. Unzip
-3. Run [`local-dev.cmd`](local-dev.cmd) for initialization
-4. Run [`mariadb-playground.exe`](mariadb-playground.exe) every time to (re)create `DATABASE` (database name "EIE3112")
+3. Run [`local-dev.cmd`](local-dev.cmd) or [`local-docker-dev.cmd`](local-docker-dev.cmd) for initialization
+4. Run [`mariadb-playground.exe  --database=default --docker=true`](mariadb-playground.exe) or `./mariadb-playground --database=default --docker=true` in docker every time to (re)create `DATABASE` (database name "EIE3112")
 5. Connection string "root:@tcp(localhost:3306)/?charset=utf8&parseTime=True"
 
 ### TODOs
