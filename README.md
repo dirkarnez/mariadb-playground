@@ -7,8 +7,9 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
 ### Prerequisites
 - Unzip tool
 - MariaDB client
+   - [DBeaver](https://dbeaver.com/files/dbeaver-le-latest-win32.win32.x86_64.zip), or
    - [HeidiSQL x64 Portable](https://www.heidisql.com/download.php?download=portable-64), or
-   - [Download MariaDB Server - MariaDB.org](https://mariadb.org/download/?t=mariadb&p=mariadb&r=10.6.5&os=windows&cpu=x86_64&pkg=zip&m=xtom_hk)
+- [Download MariaDB Server - MariaDB.org](https://mariadb.org/download/?t=mariadb&p=mariadb&r=10.6.5&os=windows&cpu=x86_64&pkg=zip&m=xtom_hk)
 
 ### How to use
 1. Download / `git clone` this repo
