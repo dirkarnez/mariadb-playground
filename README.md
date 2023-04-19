@@ -10,6 +10,8 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
    - [DBeaver](https://dbeaver.io/files/dbeaver-ce-latest-win32.win32.x86_64.zip), or
    - [HeidiSQL x64 Portable](https://www.heidisql.com/download.php?download=portable-64), or
 - [Download MariaDB Server - MariaDB.org](https://mariadb.org/download/?t=mariadb&p=mariadb&r=10.6.5&os=windows&cpu=x86_64&pkg=zip&m=xtom_hk)
+- MYSQL
+   - https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-8.0.33-winx64.zip
 
 ### How to use
 1. Download / `git clone` this repo
