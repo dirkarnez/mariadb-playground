@@ -21,6 +21,7 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
 5. Connection string "root:@tcp(localhost:3306)/?charset=utf8&parseTime=True"
 
 ### TODOs
+- test cases
 - database name as [`mariadb-playground.exe`](mariadb-playground.exe)'s argument
 - Performance tuning (Query explain)
   - [MySQL :: MySQL Workbench Manual :: 7.1 Performance Dashboard](https://dev.mysql.com/doc/workbench/en/wb-performance-dashboard.html)
