@@ -29,3 +29,10 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
 - Indexing
 - Faking
   - [pioz/faker: Random fake data and struct generator for Go.](https://github.com/pioz/faker)
+- SQL Injection
+   - [Hacking Websites with SQL Injection - Computerphile - YouTube](https://www.youtube.com/watch?v=_jKylhJtPmI)
+- GORM
+   - Join without raw string (`Preloads`)
+      - [预加载 | GORM - The fantastic ORM library for Golang, aims to be developer friendly.](https://gorm.io/zh_CN/docs/preload.html)
+   	- db.Joins("Company", DB.Where(&Company{Alive: true})).Find(&users)
+   - [gorm package - gorm.io/gorm - Go Packages](https://pkg.go.dev/gorm.io/gorm#section-readme)
