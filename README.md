@@ -28,6 +28,7 @@ From https://github.com/peter-evans/docker-compose-actions-workflow
   - [DBeaver Documentation](https://dbeaver.com/docs/wiki/Query-Execution-Plan/)
    - <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> to explain current query
 - Indexing
+- full text search
 - Faking
   - [pioz/faker: Random fake data and struct generator for Go.](https://github.com/pioz/faker)
 - SQL Injection
